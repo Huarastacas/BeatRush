@@ -1,0 +1,8 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1719860083
+icon.svg::CompressedTexture2D::1658262885943194408::1719793696::1719793696::1::::<><>::
+LabFitting01.png::CompressedTexture2D::4807576873808897441::1719860083::1719860083::1::::<><>::
+Player.gd::GDScript::-1::1719859895::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::5686617820496972409::1719859896::0::1::::<><>::res://Player.gd<>uid://xvjl2woj2gdc::::res://icon.svg
+README.md::TextFile::-1::1719793366::0::1::::<><>::
+test_area.tscn::PackedScene::1814460384695180934::1719859897::0::1::::<><>::uid://cnav0876f4nmv::::res://player.tscn
