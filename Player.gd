@@ -10,7 +10,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func player_moviment():
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction = Input.get_vector("left", "right", "up", "down").normalized()
 	
 	if direction:
 		velocity.x = move_toward(velocity.x ,direction.x * speed, accel)
@@ -19,7 +19,7 @@ func player_moviment():
 		velocity.x = move_toward(velocity.x, 0, accel)
 		velocity.y = move_toward(velocity.y, 0, accel)
 	
-	if Input.is_action_pressed("ui_accept") and can_dodge:
+	if Input.is_action_pressed("dodge") and can_dodge:
 		velocity.x = speed * 2 * direction.x
 		velocity.y = speed * 2 * direction.y
 		can_dodge = false

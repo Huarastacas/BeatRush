@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://0365ro8kvp4i"]
+[gd_scene load_steps=3 format=3 uid="uid://0365ro8kvp4i"]
 
 [ext_resource type="PackedScene" uid="uid://cnav0876f4nmv" path="res://player.tscn" id="1_j3tup"]
+[ext_resource type="Texture2D" uid="uid://caq3das5g0rwj" path="res://LabFitting01.png" id="1_s3u4v"]
 
 [node name="TestArea" type="Node2D"]
 
+[node name="TestBg" type="Sprite2D" parent="."]
+position = Vector2(460, 274)
+texture = ExtResource("1_s3u4v")
+
 [node name="Player" parent="." instance=ExtResource("1_j3tup")]
-position = Vector2(463, 233)
+position = Vector2(616, 246)
