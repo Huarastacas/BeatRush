@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b50qvfa5q3b2p"]
+
+[ext_resource type="PackedScene" uid="uid://cnav0876f4nmv" path="res://player.tscn" id="1_kn5vw"]
+[ext_resource type="PackedScene" uid="uid://byyy1m5ugwpls" path="res://Teste_Boss.tscn" id="2_w4s2p"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 864.0
+offset_bottom = 470.0
+color = Color(0.564962, 0.564962, 0.564962, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_kn5vw")]
+position = Vector2(119, 101)
+
+[node name="TesteBoss" parent="." instance=ExtResource("2_w4s2p")]
+position = Vector2(221, 162)

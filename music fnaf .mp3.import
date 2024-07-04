@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b80ybxw4o60qy"
+path="res://.godot/imported/music fnaf .mp3-d5b221a474b34c59b612e5519378eee5.mp3str"
+
+[deps]
+
+source_file="res://music fnaf .mp3"
+dest_files=["res://.godot/imported/music fnaf .mp3-d5b221a474b34c59b612e5519378eee5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
