@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://ccqelvu2kcopp"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="boss" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_left = 310.0
+offset_top = 631.0
+offset_right = 810.0
+offset_bottom = 641.0
+pivot_offset = Vector2(250, 5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.0912252, 0.0156647, 0, 1)
+
+[node name="boss life" type="ColorRect" parent="boss"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -3.0
+offset_right = 248.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="stamina" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_left = 10.0
+offset_top = 30.0
+offset_right = 260.0
+offset_bottom = 40.0
+color = Color(0.0912252, 0.0156647, 0, 1)
+
+[node name="stamina bar" type="ColorRect" parent="stamina"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -3.0
+offset_right = 123.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.29083, 0.557378, 0.784685, 1)
+
+[node name="health" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 310.0
+offset_bottom = 30.0
+color = Color(0.0912252, 0.0156647, 0, 1)
+
+[node name="health bar" type="ColorRect" parent="health"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -8.0
+offset_right = 148.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
