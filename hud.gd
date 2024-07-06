@@ -17,9 +17,6 @@ func _set_health(new_health):
 		timer.start()
 	else:
 		damage_bar.value = health
-	
-	
-	
 
 func init_health(_health):
 	health = _health
@@ -27,17 +24,6 @@ func init_health(_health):
 	value = health
 	damage_bar.max_value = health
 	damage_bar.value = health
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 
 func _on_timer_timeout():
 	damage_bar.value = health

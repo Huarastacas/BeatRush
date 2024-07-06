@@ -53,3 +53,4 @@ offset_right = 31.0
 offset_bottom = -21.0
 
 [connection signal="timeout" from="DodgeTimer" to="." method="_on_dodge_timer_timeout"]
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

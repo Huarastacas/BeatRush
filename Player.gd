@@ -16,7 +16,6 @@ var health
 
 func _ready():
 	health = 10
-# on_dead = die
 	healthbar.init_health(health)
 
 func fire():
@@ -55,16 +54,6 @@ func player_moviment():
 		fire()
 
 
-#func para tomar dano...
-#func _set_health(value):
-	##super._set_health(value)
-	#if health <= 0 && is_alive:
-		#_die()
-
-
-
-
-
 func _on_dodge_timer_timeout():
 	can_dodge = true
 	velocity.x = 0
@@ -73,4 +62,28 @@ func _on_dodge_timer_timeout():
 	
 	
 
+func _die():
+	get_tree().reload_current_scene()
 
+#func para tomar dano...
+func _set_health(health):
+	#_set_health(value)
+	print("set leath ativo")
+	print(health)
+	if health <= 0 && is_alive:
+		_die()
+
+	healthbar.health = health
+	
+
+
+func _on_hurt_box_body_entered(body):
+	if "TesteBoss" in body.name:
+		#_die()
+		#print("dano 1")
+		#print(health)
+		health -= 1
+		_set_health(health)
+		
+		
+		

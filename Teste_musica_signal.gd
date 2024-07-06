@@ -6,6 +6,7 @@ var motion = Vector2()
 
 @onready var healthbar = $HealthBar
 var health
+var is_alive = true
 
 func _ready():
 	health = 10
@@ -41,9 +42,20 @@ func _physics_process(delta):
 		#await get_tree().create_timer(5.0).timeout
 		#print("shoot")
 
-
-#comentar é uma singular #
-
-
+func _die():
+	queue_free()
 
 
+#func para tomar dano...
+func _set_health(health):
+	#_set_health(value)
+	print("set leath ativo")
+	print(health)
+	if health <= 0 && is_alive:
+		_die()
+	healthbar.health = health
+
+func _on_area_2d_body_entered(body):
+	if "Bullet" in body.name:
+		health -= 1
+		_set_health(health)
