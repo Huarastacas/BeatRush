@@ -4,11 +4,20 @@ extends CharacterBody2D
 var speed = 300
 var accel = 10
 var can_dodge = true
+var is_alive = true
 
 #var spawn da bala
 var bullet_speed = 1000
 var bullet = preload("res://bullet_test.tscn")
 
+# var da barra de vida
+@onready var healthbar = $HealthBar
+var health
+
+func _ready():
+	health = 10
+# on_dead = die
+	healthbar.init_health(health)
 
 func fire():
 	var bullet_instance = bullet.instantiate()
@@ -44,6 +53,17 @@ func player_moviment():
 		
 	if Input.is_action_just_pressed("shoot"):
 		fire()
+
+
+#func para tomar dano...
+#func _set_health(value):
+	##super._set_health(value)
+	#if health <= 0 && is_alive:
+		#_die()
+
+
+
+
 
 func _on_dodge_timer_timeout():
 	can_dodge = true

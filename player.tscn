@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnav0876f4nmv"]
+[gd_scene load_steps=7 format=3 uid="uid://cnav0876f4nmv"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_aj84j"]
 [ext_resource type="Texture2D" uid="uid://xvjl2woj2gdc" path="res://icon.svg" id="2_a0lba"]
+[ext_resource type="PackedScene" uid="uid://dp87yeswb5joj" path="res://hud.tscn" id="3_7xlp2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eok6n"]
 animations = [{
@@ -44,5 +45,11 @@ drag_vertical_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("RectangleShape2D_m4k72")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_7xlp2")]
+offset_left = -31.0
+offset_top = -25.0
+offset_right = 31.0
+offset_bottom = -21.0
 
 [connection signal="timeout" from="DodgeTimer" to="." method="_on_dodge_timer_timeout"]

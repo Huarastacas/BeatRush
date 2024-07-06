@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://byyy1m5ugwpls"]
+[gd_scene load_steps=6 format=3 uid="uid://byyy1m5ugwpls"]
 
 [ext_resource type="Script" path="res://Teste_musica_signal.gd" id="1_n3lkq"]
 [ext_resource type="Texture2D" uid="uid://xvjl2woj2gdc" path="res://icon.svg" id="2_4jciq"]
+[ext_resource type="PackedScene" uid="uid://dp87yeswb5joj" path="res://hud.tscn" id="3_d3cgw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8pdv"]
 size = Vector2(100, 100)
@@ -24,3 +25,9 @@ texture = ExtResource("2_4jciq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_kbujo")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_d3cgw")]
+offset_left = -120.0
+offset_top = 76.0
+offset_right = 120.0
+offset_bottom = 80.0

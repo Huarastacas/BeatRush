@@ -4,10 +4,18 @@ var speed = 300
 var accel = 100
 var motion = Vector2()
 
+@onready var healthbar = $HealthBar
+var health
+
+func _ready():
+	health = 10
+# on_dead = die
+	healthbar.init_health(health)
+
 func _physics_process(delta):
 	
 	var Player = get_parent().get_node("Player")
-	position +=- (Player.position - position) / 50
+	position += (Player.position - position) / 50
 	look_at(Player.position)
 	
 	move_and_collide(motion)
