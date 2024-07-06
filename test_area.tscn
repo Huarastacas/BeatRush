@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://0365ro8kvp4i"]
+[gd_scene load_steps=5 format=3 uid="uid://0365ro8kvp4i"]
 
 [ext_resource type="PackedScene" uid="uid://cnav0876f4nmv" path="res://player.tscn" id="1_j3tup"]
 [ext_resource type="Texture2D" uid="uid://caq3das5g0rwj" path="res://LabFitting01.png" id="1_s3u4v"]
+[ext_resource type="PackedScene" uid="uid://bwe1easqu7cp4" path="res://parede fodase.tscn" id="3_uh2sx"]
+[ext_resource type="PackedScene" uid="uid://byyy1m5ugwpls" path="res://Teste_Boss.tscn" id="4_ct3ae"]
 
 [node name="TestArea" type="Node2D"]
 
@@ -11,3 +13,9 @@ texture = ExtResource("1_s3u4v")
 
 [node name="Player" parent="." instance=ExtResource("1_j3tup")]
 position = Vector2(616, 246)
+
+[node name="Node2D" parent="." instance=ExtResource("3_uh2sx")]
+position = Vector2(125, 184)
+
+[node name="TesteBoss" parent="." instance=ExtResource("4_ct3ae")]
+position = Vector2(760, 312)
