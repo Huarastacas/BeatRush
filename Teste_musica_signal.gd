@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed = 300
 var accel = 100
 var motion = Vector2()
+var stun = false
 
 @onready var healthbar = $HealthBar
 var health
@@ -14,6 +15,10 @@ func _ready():
 	healthbar.init_health(health)
 
 func _physics_process(delta):
+	
+	if stun:
+		velocity = lerp(velocity, Vector2.ZERO, 0.3)
+		return
 	
 	var Player = get_parent().get_node("Player")
 	position += (Player.position - position) / 50
@@ -56,6 +61,13 @@ func _set_health(health):
 	healthbar.health = health
 
 func _on_area_2d_body_entered(body):
-	if "Bullet" in body.name:
+	if body.is_in_group("Bullets"):
+		stun = true
+		$Stun.start()
+		body.queue_free()
 		health -= 1
 		_set_health(health)
+
+
+func _on_stun_timeout():
+	stun = false
