@@ -1,8 +1,24 @@
-[gd_scene format=3 uid="uid://bdvfelj5na3ug"]
+[gd_scene load_steps=3 format=3 uid="uid://bdvfelj5na3ug"]
+
+[ext_resource type="Texture2D" uid="uid://345phb7y4p44" path="res://pngs/Prancheta 2.png" id="1_r8151"]
+[ext_resource type="Texture2D" uid="uid://te2bmvgc73oh" path="res://pngs/Prancheta 1.png" id="2_m122x"]
 
 [node name="circ_hud" type="TextureProgressBar"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 178.0
+offset_bottom = 766.0
+size_flags_horizontal = 0
+value = 100.0
+fill_mode = 4
+texture_under = ExtResource("1_r8151")
+radial_initial_angle = 225.0
+radial_fill_degrees = 90.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 1080.0
+value = 50.0
+fill_mode = 4
+texture_progress = ExtResource("2_m122x")
+radial_initial_angle = 225.0
+radial_fill_degrees = 90.0
