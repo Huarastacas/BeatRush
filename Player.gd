@@ -23,12 +23,14 @@ func fire():
 	bullet_instance.position = get_global_position()
 	bullet_instance.rotation_degrees = rotation_degrees
 	bullet_instance.linear_velocity = Vector2(bullet_speed,0).rotated(rotation)
-	#bullet_instance.apply_impulse(Vector2(), Vector2(bullet_speed,0).rotated(rotation))
 	get_tree().get_root().call_deferred("add_child",bullet_instance)
 
 
 func _physics_process(delta):
+	
 	player_moviment()
+	
+	look_at(get_global_mouse_position())
 	move_and_slide()
 
 func player_moviment():
@@ -53,14 +55,11 @@ func player_moviment():
 	if Input.is_action_just_pressed("shoot"):
 		fire()
 
-
 func _on_dodge_timer_timeout():
 	can_dodge = true
 	velocity.x = 0
 	velocity.y = 0
 	$DodgeTimer.stop()
-	
-	
 
 func _die():
 	get_tree().reload_current_scene()
@@ -76,7 +75,6 @@ func _set_health(health):
 	healthbar.health = health
 	
 
-
 func _on_hurt_box_body_entered(body):
 	if "TesteBoss" in body.name:
 		#_die()
@@ -84,6 +82,4 @@ func _on_hurt_box_body_entered(body):
 		#print(health)
 		health -= 1
 		_set_health(health)
-		
-		
-		
+
